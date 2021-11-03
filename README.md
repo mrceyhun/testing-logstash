@@ -43,7 +43,7 @@ First of all deploy kubernetes deployment:
 ---
 
 2. **Testing with `http` output filter**<br />
-"http" output filter posts http requests to defined host:port. In order to catch these requests, you need a server which listens incoming requests. 
+"http" output filter posts http requests to defined `url => 'host:port'`. In order to catch these requests, you need a server which listens incoming requests. We will run a basic http server in localhost to print incoming requests data which are the final version that we're sending to our server. So, we'll use `http://127.0.0.1:PORT` in `url` part of the http output plugin.
 
 > Not: If you define "format => json" in "http" output filter, you will get exactly one json body for each line of input logs. Besides, if you define "format => json_batch" in "http" output filter, you will get a body like array of jsons which represents multiple line of input logs. We use "json_batch" in our config.
 
