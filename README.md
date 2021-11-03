@@ -61,7 +61,7 @@ First of all deploy kubernetes deployment:
 - Open another terminal tab and run logstash:
   - `logstash -r -f logstash-ex1.conf`
 - You will see all fields you will send to your production server in the terminal tab you run "server.py".
-  
+- To continue testing without restarting logstash, you can open a 3rd shell in kubernetes pod and make changes in your configuration. After saving the config file, logstash will reread input data and send to defined host:port.
 ---
 
 
