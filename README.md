@@ -3,7 +3,7 @@
 ### What is this
 This repo includes a Dockerfile which creates CentOS based image and logstash testing tools.
 
-### Where I can find the lastest Docker image
+### Where I can find the latest Docker image
 `docker push mrceyhun/testing-logstash:latest`
 
 ### How I can deploy
@@ -60,6 +60,15 @@ First of all deploy kubernetes deployment:
   - `./server.py <port> 2>&1 | grep -F '[{' | jq`  # Prints body of the incoming requests in pretty json format
 - Open another terminal tab and run logstash:
   - `logstash -r -f logstash-ex1.conf`
-- You will see all fields you will send to your production server.
+- You will see all fields you will send to your production server in the terminal tab you run "server.py".
   
 ---
+
+
+## References
+- https://www.elastic.co/guide/en/logstash/current/input-plugins.html
+- https://www.elastic.co/guide/en/logstash/current/output-plugins.html
+- https://www.elastic.co/guide/en/logstash/current/filter-plugins.html
+- https://www.elastic.co/guide/en/logstash/current/codec-plugins.html
+- https://github.com/dmwm/CMSKubernetes/blob/master/kubernetes/cmsweb/monitoring/logstash.conf
+- https://github.com/dmwm/CMSKubernetes/tree/master/kubernetes/cmsweb/monitoring
