@@ -36,7 +36,6 @@ def run(server_class=HTTPServer, handler_class=S, port=8080):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     logging.info('Starting httpd...\n')
-    logging.info("In order to see pretty JSON, use: /server.py [<port>] 2>&1 | grep -F '[{' | jq ")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
