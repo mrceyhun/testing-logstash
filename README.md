@@ -35,7 +35,7 @@ First of all deploy kubernetes deployment:
   - `logstash -r -f logstash-ex2.conf`
 - Both filtering output and Logstash info logs will be written to stdout, not to "/usr/share/logstash/logs".
 - You can use `json` or `rubydebug` codec in output filter
-- You don't need to start and stop logstash because it takes long time to start. `-t` flag allows to reread input files when there is a change in config file
+- You don't need to start and stop logstash because it takes long time to start. `-r` flag allows to reread input files when there is a change in config file
 - So, I suggest that keep running logstash, open new terminal tab and edit logstash-ex2.conf and save. These 2 configurations in input filter will allow to read input file from the beginning again  with the new configuration of course:
   - `start_position => "beginning"` 
   - `sincedb_path => "/dev/null"`
