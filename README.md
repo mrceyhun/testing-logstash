@@ -64,6 +64,15 @@ First of all deploy kubernetes deployment:
 - To continue testing without restarting logstash, you can open a 3rd shell in kubernetes pod and make changes in your configuration. After saving the config file, logstash will reread input data and send to defined host:port.
 ---
 
+### How to validate configuration
+You can use `-t` flag to validate configuration file without running Logstash:
+- `logstash -t -f logstash.conf`
+  - `Config Validation Result: OK. Exiting Logstash` means conf file is valid. 
+  - For detailed logs, use `--verbose` or `--log.level=debug` flag also, such as: `logstash --verbose -t -f logstash.conf`
+
+### Advanced testing
+You may want to change `jvm.options`, `log4j2.properties`, `logstash-sample.conf`, `logstash.yml`, `pipelines.yml`, `startup.options` of Logstash. You can find all these files under `/etc/logstash` directory. Keep in your mind that `/etc/logstash/conf.d` is the location for configuration files of Logstash, if you run it as service without `-f` flag. 
+
 
 ## References
 - https://www.elastic.co/guide/en/logstash/current/input-plugins.html
